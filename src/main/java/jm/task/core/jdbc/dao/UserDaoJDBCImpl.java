@@ -10,13 +10,10 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class UserDaoJDBCImpl implements UserDao {
-    public UserDaoJDBCImpl() {
-
-    }
 
     public void createUsersTable() {
         try(Connection connection = Util.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS users (id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(80), lastname VARCHAR (100), age INT) ;")){
+            PreparedStatement preparedStatement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS users (id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(80), lastname VARCHAR (100), age SMALLINT) ;")){
             preparedStatement.execute();
         } catch (SQLException e){
             e.printStackTrace();
