@@ -1,11 +1,12 @@
 package jm.task.core.jdbc;
 
+import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
-        UserServiceImpl test = new UserServiceImpl();
+        UserService test = new UserServiceImpl();
         test.createUsersTable();
         test.saveUser("Илья","Посыпкин", (byte) 20);
         System.out.println("User c именем - Илья добавлен в базу данных");
